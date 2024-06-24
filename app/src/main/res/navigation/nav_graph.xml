@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.coroutine_task_2024.ui.home.HomeFragment"
+        android:label="Home Fragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_step1Fragment"
+            app:destination="@id/step1Fragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_coroutineFragment"
+            app:destination="@id/coroutineFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/step1Fragment"
+        android:name="com.coroutine_task_2024.ui.step1.ThreadFragment"
+        android:label="Step1Fragment"
+        tools:layout="@layout/fragment_thread" />
+    <fragment
+        android:id="@+id/coroutineFragment"
+        android:name="com.coroutine_task_2024.ui.step1.CoroutineFragment"
+        android:label="CoroutineFragment"
+        tools:layout="@layout/fragment_coroutine" />
+</navigation>

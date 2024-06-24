@@ -1,4 +1,4 @@
-package com.example.coroutine_task_2024
+package com.coroutine_task_2024
 
 import org.junit.Test
 

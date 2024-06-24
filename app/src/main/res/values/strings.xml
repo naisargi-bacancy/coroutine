@@ -4,4 +4,24 @@
     <string name="task_2">task 2</string>
     <string name="update_counter">Update Counter</string>
     <string name="_0">0</string>
+    <string name="execute_task">Execute long running task</string>
+    <string name="use_of_thread">Use of Thread</string>
+    <string name="need_of_thread">Need of Thread</string>
+    <string name="execute_task_thread">Execute long running task in Thread</string>
+    <string name="thread_introduction">Thread Introduction</string>
+    <string name="check_logs_for_monitoring">Check logs for monitoring..</string>
+    <string name="coroutine_introduction">Coroutine Introduction</string>
+    <string name="coroutine_introduction_desc">Check logs on fragment launch for scope and context of the coroutine.\n\nScope : Lifetime\nContext : Threads</string>
+    <string name="launch_vs_async">Launch Vs Async</string>
+    <string name="launch_async_desc">Launch returns the Job object, which can be used to suspend or cancel the coroutine. If any data is not expected from the coroutine job operation then this function can be used.
+        \nWhen you dont care about the result, use Launch. (Fire &amp; Forget)
+        \n\nAsync returns the object of Deferred&lt;T&gt;. T will be the return datatype of the last statement in the coroutine.</string>
+    <string name="fb_followers_launch">Fb Followers (Launch) - Check the execution of the function in the logcat</string>
+    <string name="fb_followers_async">Fb Followers (Async) - Check the execution of the function in the logcat</string>
+    <string name="get_fb_insta_followers">Get Fb Insta Followers - Check the execution of the function in the logcat</string>
+    <string name="jobs_amp_cancellations"><![CDATA[Jobs & Cancellation]]></string>
+    <string name="understand_job_hierachy">Understand Job hierarchy</string>
+    <string name="lifecycle_scope_and_viewmodel_scope">Lifecycle scope and viewmodel scope</string>
+    <string name="create_new_fragment_containing_viewmodel">Create new fragment containing viewmodel</string>
+    <string name="create_coroutine_for_viewmodel_scope">Create coroutine for viewmodel scope</string>
 </resources>
