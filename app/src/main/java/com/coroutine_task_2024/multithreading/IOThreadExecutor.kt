@@ -1,17 +1,17 @@
-package com.coroutine_task_2024.ui.multithreading
+package com.coroutine_task_2024.multithreading
 
 import android.util.Log
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
-class MainThreadExecutor {
-    private val TAG = "MainThreadExecutor"
-    fun execute(task: Runnable?): Job {
+class IOThreadExecutor {
+    private val TAG = "IOThreadExecutor"
+    fun execute(task: suspend () -> Unit): Job {
         Log.e(TAG, "" + task.hashCode() + " queuing")
 
-        return CoroutineHelper.dispatcherMainCoroutineScope.launch {
+        return CoroutineHelper.dispatcherIOCoroutineScope.launch {
             Log.e(TAG, "" + task.hashCode() + " executing")
-            task?.run()
+            task()
             Log.e(TAG, "" + task.hashCode() + " done")
         }
     }

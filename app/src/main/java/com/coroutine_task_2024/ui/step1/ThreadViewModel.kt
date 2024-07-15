@@ -4,11 +4,12 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.coroutine_task_2024.base.BaseViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class CoroutineViewModel : BaseViewModel() {
+class ThreadViewModel : ViewModel() {
+
+    private val TAG: String = "CoroutineViewModel"
 
     override fun onCleared() {
         super.onCleared()

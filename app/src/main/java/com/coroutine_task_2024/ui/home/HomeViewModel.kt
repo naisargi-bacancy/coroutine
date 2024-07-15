@@ -1,22 +1,23 @@
 package com.coroutine_task_2024.ui.home
 
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import com.coroutine_task_2024.R
+import com.coroutine_task_2024.base.BaseViewModel
+import com.coroutine_task_2024.utils.SingleLiveEvent
 
-class HomeViewModel : ViewModel() {
+class HomeViewModel : BaseViewModel() {
 
-    var navigateToStep1: MutableLiveData<Boolean> = MutableLiveData(false)
-    var navigateToCoroutine: MutableLiveData<Boolean> = MutableLiveData(false)
+    val navigateToFragment = SingleLiveEvent<Int?>()
+
     fun onThreadButtonClick() {
-        navigateToStep1.postValue(true)
+        navigateToFragment.setValue(R.id.action_homeFragment_to_threadFragment)
     }
 
     fun onCoroutineButtonClick() {
-        navigateToCoroutine.postValue(true)
+        navigateToFragment.setValue(R.id.action_homeFragment_to_coroutineFragment)
     }
 
-    fun onNavigationComplete() {
-        navigateToStep1.postValue(false)
-        navigateToCoroutine.postValue(false)
+    fun resetNavigationValue() {
+        navigateToFragment.setValue(null)
     }
+
 }

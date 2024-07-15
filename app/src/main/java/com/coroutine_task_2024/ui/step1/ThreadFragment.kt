@@ -2,8 +2,7 @@ package com.coroutine_task_2024.ui.step1
 
 import android.util.Log
 import android.view.View
-import com.coroutine_task_2024.BaseFragment
-import com.coroutine_task_2024.ui.home.HomeViewModel
+import com.coroutine_task_2024.base.BaseFragment
 import com.coroutine_task_2024.R
 import com.coroutine_task_2024.databinding.FragmentThreadBinding
 import kotlinx.coroutines.CoroutineScope
@@ -13,15 +12,15 @@ import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import kotlin.concurrent.thread
 
-class ThreadFragment() : BaseFragment<FragmentThreadBinding, HomeViewModel>() {
+class ThreadFragment() : BaseFragment<FragmentThreadBinding, ThreadViewModel>() {
 
     private lateinit var binding: FragmentThreadBinding
     private val TAG = "Step1Fragment"
     override val layoutResourceId: Int
         get() = R.layout.fragment_thread
 
-    override val viewModelClass: Class<HomeViewModel>
-        get() = HomeViewModel::class.java
+    override val viewModelClass: Class<ThreadViewModel>
+        get() = ThreadViewModel::class.java
 
     override val bindingVariable: Int
         get() = 0

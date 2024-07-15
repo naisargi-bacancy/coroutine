@@ -2,9 +2,10 @@ package com.coroutine_task_2024.ui.step1
 
 import android.util.Log
 import androidx.lifecycle.lifecycleScope
-import com.coroutine_task_2024.BaseFragment
+import com.coroutine_task_2024.base.BaseFragment
 import com.coroutine_task_2024.R
 import com.coroutine_task_2024.databinding.FragmentCoroutineBinding
+import com.coroutine_task_2024.multithreading.DefaultExecutorSupplier
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -12,6 +13,7 @@ import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class CoroutineFragment() : BaseFragment<FragmentCoroutineBinding, CoroutineViewModel>() {
 
@@ -71,6 +73,44 @@ class CoroutineFragment() : BaseFragment<FragmentCoroutineBinding, CoroutineView
         GlobalScope.launch(Dispatchers.Main) {
             Log.e("!_@_", "3- ${Thread.currentThread().name}")
         }
+        /* val handler = CoroutineExceptionHandler { context, exception ->
+             Log.e(TAG, "Exception got $exception")
+         }
+         GlobalScope.launch(handler) {
+             throw Throwable("Some exception")
+         }*/
+
+        CoroutineScope(Dispatchers.IO).launch {
+            demoWithContext()
+        }
+
+        Log.e(TAG, "End..")
+
+
+        /*CoroutineScope(Dispatchers.Default).launch {
+            Log.e(TAG,"coroutine begins..")
+            delay(2000)
+            Log.e(TAG,"coroutine ends..")
+        }*/
+
+        DefaultExecutorSupplier.instance.forBackgroundTasks().execute {
+            //Code to run
+
+        }
+
+        DefaultExecutorSupplier.instance.forIOTasks().execute{
+            //IO task
+            getFbFollowers()
+        }
+    }
+
+    private suspend fun demoWithContext() {
+        Log.e(TAG, "Before")
+        withContext(Dispatchers.IO) {
+            delay(1000)
+            Log.e(TAG, "Inside")
+        }
+        Log.e(TAG, "After")
     }
 
     private fun printFollowers() {

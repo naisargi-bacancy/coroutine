@@ -1,4 +1,4 @@
-package com.coroutine_task_2024.ui.multithreading
+package com.coroutine_task_2024.multithreading
 
 import android.util.Log
 import kotlinx.coroutines.CoroutineExceptionHandler

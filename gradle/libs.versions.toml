@@ -1,16 +1,27 @@
 [versions]
 agp = "8.3.2"
 kotlin = "1.9.0"
+kotlinKapt = "2.0.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
-junitVersion = "1.1.5"
-espressoCore = "3.5.1"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
 appcompat = "1.7.0"
 material = "1.12.0"
 coroutine = "1.7.3"
 navigation = "2.7.7"
-lifecycle = ":2.8.2"
-databinding = ":2.8.2"
+lifecycle = "2.8.3"
+databinding = "2.8.3"
+gms = "4.4.2"
+firebase = "33.1.1"
+firebasePlugin = "3.0.2"
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+jetbrain-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+jetbrain-kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+google-services = { id = "com.google.gms.google-services", version.ref = "gms" }
+firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebasePlugin" }
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -26,9 +37,10 @@ navigation-fragment = { group = "androidx.navigation", name = "navigation-fragme
 lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
 lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
 databinding-runtime = { group = "androidx.databinding", name = "databinding-runtime", version.ref = "databinding" }
-databinding-compile = { group = "androidx.databinding", name = "databinding-compiler", version.ref = "databinding" }
+databinding-compile = { group = "androidx.databinding", name = "databinding-compiler", version.ref = "agp" }
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase" }
+firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics"}
+firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics"}
+firebase-config = { group = "com.google.firebase", name = "firebase-config"}
 
-[plugins]
-androidApplication = { id = "com.android.application", version.ref = "agp" }
-jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 

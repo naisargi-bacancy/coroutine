@@ -1,7 +1,9 @@
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.jetbrainsKotlinAndroid)
-    id("kotlin-kapt")
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.jetbrain.kotlin.android )
+    alias(libs.plugins.jetbrain.kotlin.kapt )
+    alias(libs.plugins.google.services)
+    alias(libs.plugins.firebase.crashlytics)
 }
 
 android {
@@ -64,7 +66,12 @@ dependencies {
     implementation(libs.lifecycle.runtime)
     //binding
     implementation(libs.databinding.runtime)
-    //kapt(libs.databinding.compile)
+    kapt(libs.databinding.compile)
+    //firebase
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+    implementation(libs.firebase.crashlytics)
+    implementation(libs.firebase.config)
 
 
 }

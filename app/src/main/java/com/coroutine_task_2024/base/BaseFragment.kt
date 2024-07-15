@@ -1,4 +1,4 @@
-package com.coroutine_task_2024
+package com.coroutine_task_2024.base
 
 import android.os.Bundle
 import android.view.LayoutInflater

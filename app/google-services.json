@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "316550429458",
+    "project_id": "coroutine-task",
+    "storage_bucket": "coroutine-task.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:316550429458:android:ce938e0cb5c8b0eeca51cb",
+        "android_client_info": {
+          "package_name": "com.coroutine_task_2024"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwHlkubnoGJsdBEIpj6Bmga2lOGT05ECQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

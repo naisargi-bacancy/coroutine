@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -11,20 +11,28 @@
         android:label="Home Fragment"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_homeFragment_to_step1Fragment"
-            app:destination="@id/step1Fragment" />
+            android:id="@+id/action_homeFragment_to_threadFragment"
+            app:destination="@id/threadFragment" />
         <action
             android:id="@+id/action_homeFragment_to_coroutineFragment"
             app:destination="@id/coroutineFragment" />
     </fragment>
     <fragment
-        android:id="@+id/step1Fragment"
+        android:id="@+id/threadFragment"
         android:name="com.coroutine_task_2024.ui.step1.ThreadFragment"
-        android:label="Step1Fragment"
+        android:label="ThreadFragment"
         tools:layout="@layout/fragment_thread" />
     <fragment
         android:id="@+id/coroutineFragment"
         android:name="com.coroutine_task_2024.ui.step1.CoroutineFragment"
         android:label="CoroutineFragment"
         tools:layout="@layout/fragment_coroutine" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.coroutine_task_2024.ui.splash.SplashFragment"
+        android:label="SplashFragment">
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>
