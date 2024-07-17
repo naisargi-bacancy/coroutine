@@ -5,10 +5,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.coroutine_task_2024.base.BaseViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class CoroutineViewModel : BaseViewModel() {
+@HiltViewModel
+class CoroutineViewModel @Inject constructor() : BaseViewModel() {
 
     override fun onCleared() {
         super.onCleared()

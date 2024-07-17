@@ -6,7 +6,9 @@ import com.coroutine_task_2024.R
 import com.coroutine_task_2024.base.BaseFragment
 import com.coroutine_task_2024.databinding.FragmentSplashBinding
 import com.coroutine_task_2024.multithreading.DefaultExecutorSupplier
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SplashFragment : BaseFragment<FragmentSplashBinding, SplashViewModel>() {
     override val layoutResourceId: Int
         get() = R.layout.fragment_splash

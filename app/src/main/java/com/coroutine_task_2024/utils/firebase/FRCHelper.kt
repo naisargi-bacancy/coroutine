@@ -3,27 +3,17 @@ package com.coroutine_task_2024.utils.firebase
 import android.util.Log
 import com.coroutine_task_2024.multithreading.CoroutineHelper
 import com.coroutine_task_2024.repository.BaseDataSource
-import com.coroutine_task_2024.repository.firebase.FRCLocalDataSource
-import com.coroutine_task_2024.repository.firebase.FRCRemoteDataSource
 import com.coroutine_task_2024.repository.firebase.FRCRepository
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-object FRCHelper {
+class FRCHelper @Inject constructor(val frcRepository: FRCRepository) {
     //manage scope - Local/remote
     //call config
 
     private val TAG = "FRCHelper"
 
     private val coroutineScope = CoroutineHelper.dispatcherIOCoroutineScope
-
-    private val frcRepository: FRCRepository by lazy {
-        FRCRepository(
-            FRCRemoteDataSource(FirebaseABIntegration.remoteConfig),
-            FRCLocalDataSource(FirebaseABIntegration.remoteConfig),
-            Dispatchers.IO
-        )
-    }
 
     fun getAndUpdateRemoteConfig(
         listener: () -> Unit,

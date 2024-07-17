@@ -13,8 +13,9 @@ navigation = "2.7.7"
 lifecycle = "2.8.3"
 databinding = "2.8.3"
 gms = "4.4.2"
-firebase = "33.1.1"
+firebase = "33.1.2"
 firebasePlugin = "3.0.2"
+hilt = "2.46.1"
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -22,6 +23,7 @@ jetbrain-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "
 jetbrain-kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 google-services = { id = "com.google.gms.google-services", version.ref = "gms" }
 firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebasePlugin" }
+hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -39,8 +41,10 @@ lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-kt
 databinding-runtime = { group = "androidx.databinding", name = "databinding-runtime", version.ref = "databinding" }
 databinding-compile = { group = "androidx.databinding", name = "databinding-compiler", version.ref = "agp" }
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase" }
-firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics"}
-firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics"}
-firebase-config = { group = "com.google.firebase", name = "firebase-config"}
+firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics" }
+firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics" }
+firebase-config = { group = "com.google.firebase", name = "firebase-config" }
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 
 

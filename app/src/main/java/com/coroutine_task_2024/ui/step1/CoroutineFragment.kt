@@ -6,6 +6,7 @@ import com.coroutine_task_2024.base.BaseFragment
 import com.coroutine_task_2024.R
 import com.coroutine_task_2024.databinding.FragmentCoroutineBinding
 import com.coroutine_task_2024.multithreading.DefaultExecutorSupplier
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -15,6 +16,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+@AndroidEntryPoint
 class CoroutineFragment() : BaseFragment<FragmentCoroutineBinding, CoroutineViewModel>() {
 
     private lateinit var binding: FragmentCoroutineBinding

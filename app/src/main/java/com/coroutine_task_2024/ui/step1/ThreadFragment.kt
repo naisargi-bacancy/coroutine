@@ -5,6 +5,7 @@ import android.view.View
 import com.coroutine_task_2024.base.BaseFragment
 import com.coroutine_task_2024.R
 import com.coroutine_task_2024.databinding.FragmentThreadBinding
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -12,6 +13,7 @@ import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import kotlin.concurrent.thread
 
+@AndroidEntryPoint
 class ThreadFragment() : BaseFragment<FragmentThreadBinding, ThreadViewModel>() {
 
     private lateinit var binding: FragmentThreadBinding

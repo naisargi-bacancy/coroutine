@@ -6,8 +6,10 @@ import com.coroutine_task_2024.BR
 import com.coroutine_task_2024.R
 import com.coroutine_task_2024.base.BaseFragment
 import com.coroutine_task_2024.databinding.FragmentHomeBinding
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 
+@AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
 
     private val TAG = "HomeFragment"

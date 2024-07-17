@@ -13,12 +13,16 @@ import com.google.firebase.remoteconfig.ConfigUpdate
 import com.google.firebase.remoteconfig.ConfigUpdateListener
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigException
+import dagger.hilt.android.HiltAndroidApp
+import javax.inject.Inject
 
+@HiltAndroidApp
 class CoroutineApplication : Application() {
 
-    private val TAG = "CoroutineApplication"
+    @Inject
+    lateinit var onConfigUpdate: FRCUpdateListener
 
-    private val onConfigUpdate: FRCUpdateListener by lazy { FRCUpdateListener() }
+    private val TAG = "CoroutineApplication"
 
     override fun onCreate() {
         super.onCreate()
@@ -54,7 +58,10 @@ class CoroutineApplication : Application() {
             }
     }
 
-    open class FRCUpdateListener : ConfigUpdateListener {
+     class FRCUpdateListener : ConfigUpdateListener {
+
+         @Inject
+         lateinit var frcHelper: FRCHelper
 
         private val TAG = "FRCUpdateListener"
 
@@ -64,7 +71,7 @@ class CoroutineApplication : Application() {
             // activate config
             FirebaseRemoteConfig.getInstance().activate()
             // read activated config, parse all keys from local
-            FRCHelper.getAndUpdateRemoteConfig({
+            frcHelper.getAndUpdateRemoteConfig({
                 Log.e("frcUpdateListener", "Parsing complete")
             }, BaseDataSource.Type.LOCAL)
         }

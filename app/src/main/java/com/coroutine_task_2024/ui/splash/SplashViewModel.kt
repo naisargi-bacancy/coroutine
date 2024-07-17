@@ -4,8 +4,14 @@ import android.util.Log
 import com.coroutine_task_2024.base.BaseViewModel
 import com.coroutine_task_2024.repository.BaseDataSource
 import com.coroutine_task_2024.utils.firebase.FRCHelper
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class SplashViewModel : BaseViewModel() {
+@HiltViewModel
+class SplashViewModel @Inject constructor(): BaseViewModel() {
+
+    @Inject
+    lateinit var frcHelper: FRCHelper
 
     private val frcUpdateListener: () -> Unit = {
         //call config Api to refresh app with the latest config values
@@ -14,6 +20,6 @@ class SplashViewModel : BaseViewModel() {
 
     fun callFirebaseRemoteConfig() {
         //call config
-        FRCHelper.getAndUpdateRemoteConfig(frcUpdateListener, BaseDataSource.Type.REMOTE)
+        frcHelper.getAndUpdateRemoteConfig(frcUpdateListener, BaseDataSource.Type.REMOTE)
     }
 }

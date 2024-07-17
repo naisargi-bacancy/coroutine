@@ -3,11 +3,11 @@ package com.coroutine_task_2024.repository.firebase
 import android.util.Log
 import com.coroutine_task_2024.repository.BaseDataSource
 import kotlinx.coroutines.CoroutineDispatcher
+import javax.inject.Inject
 
-class FRCRepository(
+class FRCRepository @Inject constructor(
     private val remoteDataSource: FRCRemoteDataSource,
-    private val localDataSource: FRCLocalDataSource,
-    private val dispatcher: CoroutineDispatcher
+    private val localDataSource: FRCLocalDataSource
 ) {
     suspend fun getAndUpdateRemoteConfig(dataSourceType: BaseDataSource.Type) {
         val configList = mapDataSource(dataSourceType).fetchData()
